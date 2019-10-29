@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ViewController.init(coder:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "contentControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CaptureData.str.getter:Extensions.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.selectedVirtualContent.didset:ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "selectedContentController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.tabBar(_:didSelect:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item.tag">
+            </PersistentString>
+            <PersistentString
+               value = "selectedVirtualContent">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.getFrameData():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "anchor.geometry">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.isCapturing.didset:ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isCapturing">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "VirtualContentType(rawValue: tabBar.selectedItem!.tag)">
+            </PersistentString>
+            <PersistentString
+               value = "tabBar.selectedItem!.tag">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.connectButtonClick(_:forEvent:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ipTextField.text!">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.recordSessionToggle(_:forEvent:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isCapturing">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

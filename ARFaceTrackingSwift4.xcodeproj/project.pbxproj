@@ -3,27 +3,68 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8949B321232304DC0033EF93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B320232304DC0033EF93 /* AppDelegate.swift */; };
-		8949B323232304DC0033EF93 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8949B322232304DC0033EF93 /* art.scnassets */; };
-		8949B325232304DC0033EF93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B324232304DC0033EF93 /* ViewController.swift */; };
-		8949B328232304DC0033EF93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8949B326232304DC0033EF93 /* Main.storyboard */; };
-		8949B32A232304E10033EF93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8949B329232304E10033EF93 /* Assets.xcassets */; };
-		8949B32D232304E10033EF93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8949B32B232304E10033EF93 /* LaunchScreen.storyboard */; };
+		891BD3DC2331867600ED5CA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891BD3DB2331867600ED5CA0 /* Extensions.swift */; };
+		8949B347232305B20033EF93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B334232305B20033EF93 /* AppDelegate.swift */; };
+		8949B348232305B20033EF93 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B335232305B20033EF93 /* Utilities.swift */; };
+		8949B349232305B20033EF93 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8949B337232305B20033EF93 /* Models.scnassets */; };
+		8949B34A232305B20033EF93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8949B338232305B20033EF93 /* LaunchScreen.storyboard */; };
+		8949B34C232305B20033EF93 /* VideoTexturedFace.shader in Resources */ = {isa = PBXBuildFile; fileRef = 8949B33A232305B20033EF93 /* VideoTexturedFace.shader */; };
+		8949B34E232305B20033EF93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8949B33D232305B20033EF93 /* Main.storyboard */; };
+		8949B34F232305B20033EF93 /* TransformVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B340232305B20033EF93 /* TransformVisualization.swift */; };
+		8949B350232305B20033EF93 /* FaceOcclusionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B341232305B20033EF93 /* FaceOcclusionOverlay.swift */; };
+		8949B351232305B20033EF93 /* VideoTexturedFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B342232305B20033EF93 /* VideoTexturedFace.swift */; };
+		8949B352232305B20033EF93 /* VirtualContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B343232305B20033EF93 /* VirtualContent.swift */; };
+		8949B353232305B20033EF93 /* TexturedFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B344232305B20033EF93 /* TexturedFace.swift */; };
+		8949B354232305B20033EF93 /* BlendShapeCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B345232305B20033EF93 /* BlendShapeCharacter.swift */; };
+		8949B355232305B20033EF93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B346232305B20033EF93 /* ViewController.swift */; };
+		8949B357232306A10033EF93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8949B356232306A00033EF93 /* Assets.xcassets */; };
+		8966F22F2328970200979D16 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966F22E2328970200979D16 /* Network.swift */; };
+		896CC92023661EC30007B3F8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896CC91E23661EB50007B3F8 /* opencv2.framework */; };
+		896CC92123661EC30007B3F8 /* visp3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896CC91F23661EC30007B3F8 /* visp3.framework */; };
+		896CC92623661FD40007B3F8 /* ImageConversion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 896CC92523661FD40007B3F8 /* ImageConversion.mm */; };
+		897A15852366297600F9E932 /* ImageDisplay.mm in Sources */ = {isa = PBXBuildFile; fileRef = 897A15842366297600F9E932 /* ImageDisplay.mm */; };
+		897A158723662D6F00F9E932 /* AprilTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 897A158623662D6F00F9E932 /* AprilTag.png */; };
+		897A158923662E0B00F9E932 /* AprilTagDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A158823662E0B00F9E932 /* AprilTagDetector.swift */; };
+		897A159323665AF500F9E932 /* AprilTag.mm in Sources */ = {isa = PBXBuildFile; fileRef = 897A159223665AF500F9E932 /* AprilTag.mm */; };
+		89F73A352357D20500A95F60 /* ARFaceGeometry.obj in Resources */ = {isa = PBXBuildFile; fileRef = 89F73A342357D20500A95F60 /* ARFaceGeometry.obj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		891BD3DB2331867600ED5CA0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8949B31D232304DC0033EF93 /* ARFaceTrackingSwift4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARFaceTrackingSwift4.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8949B320232304DC0033EF93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8949B322232304DC0033EF93 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		8949B324232304DC0033EF93 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8949B327232304DC0033EF93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8949B329232304E10033EF93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8949B32C232304E10033EF93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8949B32E232304E10033EF93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8949B334232305B20033EF93 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8949B335232305B20033EF93 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		8949B337232305B20033EF93 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		8949B338232305B20033EF93 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8949B33A232305B20033EF93 /* VideoTexturedFace.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VideoTexturedFace.shader; sourceTree = "<group>"; };
+		8949B33E232305B20033EF93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
+		8949B340232305B20033EF93 /* TransformVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformVisualization.swift; sourceTree = "<group>"; };
+		8949B341232305B20033EF93 /* FaceOcclusionOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceOcclusionOverlay.swift; sourceTree = "<group>"; };
+		8949B342232305B20033EF93 /* VideoTexturedFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTexturedFace.swift; sourceTree = "<group>"; };
+		8949B343232305B20033EF93 /* VirtualContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualContent.swift; sourceTree = "<group>"; };
+		8949B344232305B20033EF93 /* TexturedFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TexturedFace.swift; sourceTree = "<group>"; };
+		8949B345232305B20033EF93 /* BlendShapeCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlendShapeCharacter.swift; sourceTree = "<group>"; };
+		8949B346232305B20033EF93 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8949B356232306A00033EF93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8949B35B2323099D0033EF93 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8966F22E2328970200979D16 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		8968D61B236621E700642090 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		896CC91E23661EB50007B3F8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		896CC91F23661EC30007B3F8 /* visp3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = visp3.framework; sourceTree = "<group>"; };
+		896CC92323661FD30007B3F8 /* ARFaceTrackingSwift4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARFaceTrackingSwift4-Bridging-Header.h"; sourceTree = "<group>"; };
+		896CC92423661FD40007B3F8 /* ImageConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageConversion.h; sourceTree = "<group>"; };
+		896CC92523661FD40007B3F8 /* ImageConversion.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageConversion.mm; sourceTree = "<group>"; };
+		897A15832366297600F9E932 /* ImageDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDisplay.h; sourceTree = "<group>"; };
+		897A15842366297600F9E932 /* ImageDisplay.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageDisplay.mm; sourceTree = "<group>"; };
+		897A158623662D6F00F9E932 /* AprilTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AprilTag.png; sourceTree = "<group>"; };
+		897A158823662E0B00F9E932 /* AprilTagDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AprilTagDetector.swift; sourceTree = "<group>"; };
+		897A159123665AF500F9E932 /* AprilTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AprilTag.h; sourceTree = "<group>"; };
+		897A159223665AF500F9E932 /* AprilTag.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AprilTag.mm; sourceTree = "<group>"; };
+		89F73A342357D20500A95F60 /* ARFaceGeometry.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ARFaceGeometry.obj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				896CC92123661EC30007B3F8 /* visp3.framework in Frameworks */,
+				896CC92023661EC30007B3F8 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,8 +83,10 @@
 		8949B314232304DC0033EF93 = {
 			isa = PBXGroup;
 			children = (
+				896CC92223661F4C0007B3F8 /* ObjectiveC Classes */,
 				8949B31F232304DC0033EF93 /* ARFaceTrackingSwift4 */,
 				8949B31E232304DC0033EF93 /* Products */,
+				896CC91D23661E140007B3F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +101,76 @@
 		8949B31F232304DC0033EF93 /* ARFaceTrackingSwift4 */ = {
 			isa = PBXGroup;
 			children = (
-				8949B320232304DC0033EF93 /* AppDelegate.swift */,
-				8949B322232304DC0033EF93 /* art.scnassets */,
-				8949B324232304DC0033EF93 /* ViewController.swift */,
-				8949B326232304DC0033EF93 /* Main.storyboard */,
-				8949B329232304E10033EF93 /* Assets.xcassets */,
-				8949B32B232304E10033EF93 /* LaunchScreen.storyboard */,
-				8949B32E232304E10033EF93 /* Info.plist */,
+				89F73A342357D20500A95F60 /* ARFaceGeometry.obj */,
+				8949B334232305B20033EF93 /* AppDelegate.swift */,
+				8949B346232305B20033EF93 /* ViewController.swift */,
+				8949B33C232305B20033EF93 /* Base.lproj */,
+				8949B33F232305B20033EF93 /* Face Overlay Content */,
+				8949B336232305B20033EF93 /* Resources */,
+				8949B335232305B20033EF93 /* Utilities.swift */,
+				8949B35B2323099D0033EF93 /* Info.plist */,
+				8966F22E2328970200979D16 /* Network.swift */,
+				891BD3DB2331867600ED5CA0 /* Extensions.swift */,
 			);
 			path = ARFaceTrackingSwift4;
+			sourceTree = "<group>";
+		};
+		8949B336232305B20033EF93 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				897A158623662D6F00F9E932 /* AprilTag.png */,
+				8949B356232306A00033EF93 /* Assets.xcassets */,
+				8949B337232305B20033EF93 /* Models.scnassets */,
+				8949B338232305B20033EF93 /* LaunchScreen.storyboard */,
+				8949B33A232305B20033EF93 /* VideoTexturedFace.shader */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8949B33C232305B20033EF93 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				8949B33D232305B20033EF93 /* Main.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		8949B33F232305B20033EF93 /* Face Overlay Content */ = {
+			isa = PBXGroup;
+			children = (
+				8949B343232305B20033EF93 /* VirtualContent.swift */,
+				8949B340232305B20033EF93 /* TransformVisualization.swift */,
+				8949B344232305B20033EF93 /* TexturedFace.swift */,
+				897A158823662E0B00F9E932 /* AprilTagDetector.swift */,
+				8949B341232305B20033EF93 /* FaceOcclusionOverlay.swift */,
+				8949B342232305B20033EF93 /* VideoTexturedFace.swift */,
+				8949B345232305B20033EF93 /* BlendShapeCharacter.swift */,
+			);
+			path = "Face Overlay Content";
+			sourceTree = "<group>";
+		};
+		896CC91D23661E140007B3F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				896CC91E23661EB50007B3F8 /* opencv2.framework */,
+				896CC91F23661EC30007B3F8 /* visp3.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		896CC92223661F4C0007B3F8 /* ObjectiveC Classes */ = {
+			isa = PBXGroup;
+			children = (
+				896CC92423661FD40007B3F8 /* ImageConversion.h */,
+				896CC92523661FD40007B3F8 /* ImageConversion.mm */,
+				896CC92323661FD30007B3F8 /* ARFaceTrackingSwift4-Bridging-Header.h */,
+				8968D61B236621E700642090 /* PrefixHeader.pch */,
+				897A15832366297600F9E932 /* ImageDisplay.h */,
+				897A15842366297600F9E932 /* ImageDisplay.mm */,
+				897A159123665AF500F9E932 /* AprilTag.h */,
+				897A159223665AF500F9E932 /* AprilTag.mm */,
+			);
+			path = "ObjectiveC Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,11 +205,12 @@
 				TargetAttributes = {
 					8949B31C232304DC0033EF93 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
 			buildConfigurationList = 8949B318232304DC0033EF93 /* Build configuration list for PBXProject "ARFaceTrackingSwift4" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -125,10 +232,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8949B323232304DC0033EF93 /* art.scnassets in Resources */,
-				8949B32D232304E10033EF93 /* LaunchScreen.storyboard in Resources */,
-				8949B32A232304E10033EF93 /* Assets.xcassets in Resources */,
-				8949B328232304DC0033EF93 /* Main.storyboard in Resources */,
+				8949B34C232305B20033EF93 /* VideoTexturedFace.shader in Resources */,
+				89F73A352357D20500A95F60 /* ARFaceGeometry.obj in Resources */,
+				8949B349232305B20033EF93 /* Models.scnassets in Resources */,
+				8949B34E232305B20033EF93 /* Main.storyboard in Resources */,
+				897A158723662D6F00F9E932 /* AprilTag.png in Resources */,
+				8949B357232306A10033EF93 /* Assets.xcassets in Resources */,
+				8949B34A232305B20033EF93 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,28 +249,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8949B325232304DC0033EF93 /* ViewController.swift in Sources */,
-				8949B321232304DC0033EF93 /* AppDelegate.swift in Sources */,
+				8949B351232305B20033EF93 /* VideoTexturedFace.swift in Sources */,
+				8966F22F2328970200979D16 /* Network.swift in Sources */,
+				8949B348232305B20033EF93 /* Utilities.swift in Sources */,
+				897A158923662E0B00F9E932 /* AprilTagDetector.swift in Sources */,
+				8949B350232305B20033EF93 /* FaceOcclusionOverlay.swift in Sources */,
+				8949B355232305B20033EF93 /* ViewController.swift in Sources */,
+				8949B34F232305B20033EF93 /* TransformVisualization.swift in Sources */,
+				897A15852366297600F9E932 /* ImageDisplay.mm in Sources */,
+				8949B347232305B20033EF93 /* AppDelegate.swift in Sources */,
+				8949B353232305B20033EF93 /* TexturedFace.swift in Sources */,
+				8949B352232305B20033EF93 /* VirtualContent.swift in Sources */,
+				896CC92623661FD40007B3F8 /* ImageConversion.mm in Sources */,
+				897A159323665AF500F9E932 /* AprilTag.mm in Sources */,
+				891BD3DC2331867600ED5CA0 /* Extensions.swift in Sources */,
+				8949B354232305B20033EF93 /* BlendShapeCharacter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8949B326232304DC0033EF93 /* Main.storyboard */ = {
+		8949B33D232305B20033EF93 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8949B327232304DC0033EF93 /* Base */,
+				8949B33E232305B20033EF93 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8949B32B232304E10033EF93 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8949B32C232304E10033EF93 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -206,6 +321,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ObjectiveC Classes/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -216,6 +333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -264,6 +382,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ObjectiveC Classes/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -284,8 +404,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99ZF7UC393;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = ARFaceTrackingSwift4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,7 +419,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kieranarmstrong.ARFaceTrackingSwift4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjectiveC Classes/ARFaceTrackingSwift4-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -302,8 +430,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99ZF7UC393;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = ARFaceTrackingSwift4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -311,7 +445,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kieranarmstrong.ARFaceTrackingSwift4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "ObjectiveC Classes/ARFaceTrackingSwift4-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
