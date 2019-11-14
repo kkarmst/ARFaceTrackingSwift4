@@ -26,6 +26,11 @@ struct CaptureData {
     }
 }
 
+// Every frame's AprilTagData
+struct AprilTagData {
+    
+}
+
 // Matrix
 extension simd_float4 {
     var str : String {

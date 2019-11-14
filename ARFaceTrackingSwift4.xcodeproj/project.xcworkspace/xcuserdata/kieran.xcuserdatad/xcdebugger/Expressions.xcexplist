@@ -3,10 +3,26 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ViewController.init(coder:):ViewController.swift">
+         contextName = "ViewController.isCapturing.didset:ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "contentControllers">
+               value = "isCapturing">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JawTrackingViewController.captureOutput(_:didOutput:from:):JawTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "CGBitmapInfo.init(rawValue: bitmapInfo)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[AprilTag getNumberOfTags]():AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "detector-&gt;getNbObjects()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -18,33 +34,6 @@
          <PersistentStrings>
             <PersistentString
                value = "selectedContentController">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ViewController.tabBar(_:didSelect:):ViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "item.tag">
-            </PersistentString>
-            <PersistentString
-               value = "selectedVirtualContent">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ViewController.getFrameData():ViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "anchor.geometry">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "ViewController.isCapturing.didset:ViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "isCapturing">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -68,10 +57,106 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "ViewController.init(coder:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "contentControllers">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in JawTrackingViewController.capture(image:intrinsic:):JawTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Double(Date().timeIntervalSince1970)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JawTrackingViewController.capture(image:intrinsic:):JawTrackingViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "::+[AprilTag find:](UIImage *):AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "detector.detect(I)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JawTrackingViewController.getArTags(vispImage:timeStamp:):JawTrackingViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.getFrameData():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "anchor.geometry">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JawTrackingViewController.captureOutput(_:didDrop:from:):JawTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "CMSampleBufferGetImageBuffer(sampleBuffer)">
+            </PersistentString>
+            <PersistentString
+               value = " CMSampleBufferGetImageBuffer(sampleBuffer)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ViewController.recordSessionToggle(_:forEvent:):ViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "isCapturing">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.tabBar(_:didSelect:):ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item.tag">
+            </PersistentString>
+            <PersistentString
+               value = "selectedVirtualContent">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "TransformViewController.viewDidLoad():TransformViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sceneView.session">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AVCapture.captureOutput(_:didOutput:from:):AvCapture.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "CMGetAttachment(sampleBuffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil)">
+            </PersistentString>
+            <PersistentString
+               value = " CMGetAttachment(sampleBuffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) as? Data {&#10;            matrix = camData.withUnsafeBytes { $0.pointee }&#10;        }">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JawTrackingViewController.getCameraIntrinsics():JawTrackingViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "JawTrackingViewController.highestResolution420Format(for:):JawTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "CMFormatDescriptionGetMediaSubType(deviceFormatDescription)">
+            </PersistentString>
+            <PersistentString
+               value = "CMVideoFormatDescriptionGetDimensions(deviceFormatDescription)">
+            </PersistentString>
+            <PersistentString
+               value = "kCVPixelFormatType_420YpCbCr8BiPlanarFullRange">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

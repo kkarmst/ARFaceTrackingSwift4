@@ -9,16 +9,14 @@ import ARKit
 import SceneKit
 
 enum VirtualContentType: Int {
-    case transforms, texture, tagdetector
+    case transforms, texture
     
     func makeController() -> VirtualContentController {
         switch self {
         case .transforms:
             return TransformVisualization()
         case .texture:
-            return TexturedFace()
-        case .tagdetector:
-            return AprilTagDetector()
+            return FaceTrackingVisualization()
         }
     }
 }
@@ -27,9 +25,7 @@ enum VirtualContentType: Int {
 protocol VirtualContentController: ARSCNViewDelegate {
     /// The root node for the virtual content.
     var contentNode: SCNNode? { get set }
-    
     var session: ARSession? {get set}
-    
     var sceneView: ARSCNView? {get set}
     
     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode?

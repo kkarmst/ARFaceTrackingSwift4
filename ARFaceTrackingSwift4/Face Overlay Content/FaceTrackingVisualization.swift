@@ -8,7 +8,9 @@ Displays the 3D face mesh geometry provided by ARKit, with a static texture.
 import ARKit
 import SceneKit
 
-class TexturedFace: NSObject, VirtualContentController {
+class FaceTrackingVisualization: NSObject, VirtualContentController {
+    var arFrame: ARFrame?
+    
 
     var contentNode: SCNNode?
     var session: ARSession?

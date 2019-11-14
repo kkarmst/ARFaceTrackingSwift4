@@ -1,21 +1,21 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Main view controller for the AR experience.
-*/
+//
+//  FaceTrackingViewController.swift
+//  ARFaceTrackingSwift4
+//
+//  Created by Kieran Armstrong on 2019-10-30.
+//  Copyright © 2019 Kieran Armstrong. All rights reserved.
+//
 
 import UIKit
 import ARKit
 import SceneKit
 import Foundation
 
-class ViewController: UIViewController, ARSessionDelegate {
+class FaceTrackingViewController: UIViewController, ARSessionDelegate {
     
     // MARK: Outlets
 
-    @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet weak var tabBar: UITabBar!
+    @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var sessionToggle: UISwitch!
     @IBOutlet weak var ipTextField: UITextField!
     @IBOutlet weak var connectButton: UIButton!
@@ -54,9 +54,9 @@ class ViewController: UIViewController, ARSessionDelegate {
     }
     
     // Capture properites
-    var session: ARSession {
-        return sceneView.session
-    }
+//    var session: ARSession {
+//        return sceneView.session
+//    }
     
     var isCapturing = false {
            didSet {
@@ -108,31 +108,30 @@ class ViewController: UIViewController, ARSessionDelegate {
     
     // MARK: ACTIONS
     
-    @IBAction func connectButtonClick(_ sender: UIButton, forEvent event: UIEvent) {
-                
+    @IBAction func connectButtonClick(_ sender: Any) {
         if(ipTextField.text != "" && connectButton.title(for: .normal) == "Enable") {
-            ipTextField.endEditing(true)
-            connect = true
-            startCapture()
+                  ipTextField.endEditing(true)
+                  connect = true
+                  startCapture()
 
-            connectButton.setTitle("Disable", for: .normal)
-            connectButton.backgroundColor = UIColor.systemRed
-        }
-        else if (connectButton.title(for: .normal) == "Disable" ) {
-            connectButton.setTitle("Enable", for: .normal)
-            connectButton.backgroundColor = UIColor.systemGreen
-            connect = false
-            stopCapture()
-        }
-        else {
-            let alert = UIAlertController(title: "Message", message: "IP was either incorrect or this not valid", preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-            self.present(alert,animated: true, completion:nil)
-        }
+                  connectButton.setTitle("Disable", for: .normal)
+                  connectButton.backgroundColor = UIColor.systemRed
+              }
+              else if (connectButton.title(for: .normal) == "Disable" ) {
+                  connectButton.setTitle("Enable", for: .normal)
+                  connectButton.backgroundColor = UIColor.systemGreen
+                  connect = false
+                  stopCapture()
+              }
+              else {
+                  let alert = UIAlertController(title: "Message", message: "IP was either incorrect or this not valid", preferredStyle: UIAlertController.Style.alert)
+                  alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                  self.present(alert,animated: true, completion:nil)
+              }
     }
     
-    @IBAction func recordSessionToggle(_ sender: UISwitch, forEvent event: UIEvent) {
-        
+
+    @IBAction func sessionRecordToggle(_ sender: Any) {
         if (connect == true) {
                 connect = false
                 sessionToggle.isOn = true
@@ -167,30 +166,25 @@ class ViewController: UIViewController, ARSessionDelegate {
               }else{
                   captureMode = .stream
               }
-        
         sceneView.delegate = self
         sceneView.session.delegate = self
         sceneView.automaticallyUpdatesLighting = true
         self.ipTextField.delegate = self
+        ipTextField.text = host
+        UIApplication.shared.isIdleTimerDisabled = true
         
-        // Set the initial face content.
-        tabBar.selectedItem = tabBar.items!.first!
-        selectedVirtualContent = VirtualContentType(rawValue: tabBar.selectedItem!.tag)
-
+        selectedVirtualContent = VirtualContentType(rawValue: 1)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        UIApplication.shared.isIdleTimerDisabled = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         initARFaceTracking()
-        ipTextField.text = host
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-           super.viewWillDisappear(animated)
-           stopCapture()
-           session.pause()
-       }
+        super.viewWillDisappear(animated)
+        sceneView.session.pause()
+    }
 
     // MARK: - ARSessionDelegate
     func session(_ session: ARSession, didFailWithError error: Error) {
@@ -230,14 +224,14 @@ class ViewController: UIViewController, ARSessionDelegate {
         guard ARFaceTrackingConfiguration.isSupported else { return }
         let configuration = ARFaceTrackingConfiguration()
         configuration.isLightEstimationEnabled = false
-        session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
     /// - Tag: ARTracking
     func initARWorldTracking() {
         let configuration = ARWorldTrackingConfiguration()
         configuration.isLightEstimationEnabled = false
-        session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
+        sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
     
     // MARK: - Error handling
@@ -347,7 +341,7 @@ class ViewController: UIViewController, ARSessionDelegate {
            guard let data = getFrameData() else {return}
            captureData.append(data)
            
-           let snap = session.currentFrame!.capturedImage
+           let snap = sceneView.session.currentFrame!.capturedImage
            let num = currentCaptureFrame // Image sequence's filename
            
            dispatchGroup.enter()
@@ -358,12 +352,11 @@ class ViewController: UIViewController, ARSessionDelegate {
                    self.dispatchGroup.leave()
                }
            }
-
            currentCaptureFrame += 1
        }
     
     func getFrameData() -> CaptureData? { // Organize arkit's data
-        let arFrame = session.currentFrame!
+        let arFrame = sceneView.session.currentFrame!
         guard let anchor = arFrame.anchors[0] as? ARFaceAnchor else {return nil}
         let vertices = anchor.geometry.vertices
         let data = CaptureData(vertices: vertices)
@@ -432,7 +425,7 @@ class ViewController: UIViewController, ARSessionDelegate {
     }
 }
 
-extension ViewController: UITabBarDelegate {
+extension FaceTrackingViewController: UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         guard let contentType = VirtualContentType(rawValue: item.tag)
             else { fatalError("unexpected virtual content tag") }
@@ -440,7 +433,7 @@ extension ViewController: UITabBarDelegate {
     }
 }
 
-extension ViewController: ARSCNViewDelegate {
+extension FaceTrackingViewController: ARSCNViewDelegate {
 
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard let faceAnchor = anchor as? ARFaceAnchor else { return }
@@ -451,9 +444,9 @@ extension ViewController: ARSCNViewDelegate {
         if node.childNodes.isEmpty, let contentNode = selectedContentController.renderer(renderer, nodeFor: faceAnchor) {
             node.addChildNode(contentNode)
         }
-        
+
         // Get the currernt frame for AprilTag detection
-        selectedContentController.session = session
+        selectedContentController.session = sceneView.session
         selectedContentController.sceneView = sceneView
 
 //        print(currentFaceAnchor?.rightEyeTransform.columns.3 ?? 0)
@@ -466,14 +459,14 @@ extension ViewController: ARSCNViewDelegate {
             contentNode.parent == node
             else { return }
         
-        selectedContentController.session = session
+        selectedContentController.session = sceneView.session
         selectedContentController.sceneView = sceneView
         selectedContentController.renderer(renderer, didUpdate: contentNode, for: anchor)
     }
 
 }
 
-extension ViewController: UITextFieldDelegate {
+extension FaceTrackingViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

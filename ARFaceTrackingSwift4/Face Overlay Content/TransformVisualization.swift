@@ -9,6 +9,8 @@ import ARKit
 import SceneKit
 
 class TransformVisualization: NSObject, VirtualContentController {
+    var arFrame: ARFrame?
+    
     
     var contentNode: SCNNode?
     var session: ARSession?
@@ -26,7 +28,7 @@ class TransformVisualization: NSObject, VirtualContentController {
         // Load an asset from the app bundle to provide visual content for the anchor.
         contentNode = SCNReferenceNode(named: "coordinateOrigin")
         
-        // Add content for eye tracking in iOS 12.
+        // Add contendsddddt for eye tracking in iOS 12.
         self.addEyeTransformNodes()
         
         // Provide the node to ARKit for keeping in sync with the face anchor.

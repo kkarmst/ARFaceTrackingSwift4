@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8911108C2368ED2E003A1429 /* AvCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8911108B2368ED2E003A1429 /* AvCapture.swift */; };
+		891110A52369EA2B003A1429 /* FaceTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891110A42369EA2B003A1429 /* FaceTrackingViewController.swift */; };
 		891BD3DC2331867600ED5CA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891BD3DB2331867600ED5CA0 /* Extensions.swift */; };
+		89261263236CC4AE009990D0 /* Camera Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89261262236CC4AE009990D0 /* Camera Functions.swift */; };
+		89370E16236CD8F8001A28D4 /* udp_util.c in Sources */ = {isa = PBXBuildFile; fileRef = 89370E13236CD8F8001A28D4 /* udp_util.c */; };
+		89370E17236CD8F8001A28D4 /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 89370E15236CD8F8001A28D4 /* ShaderUtilities.c */; };
+		89370E1A236CD8FF001A28D4 /* GLESProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 89370E18236CD8FF001A28D4 /* GLESProgram.m */; };
+		893B2D462375D778002AA681 /* TCPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B2D452375D778002AA681 /* TCPUtil.swift */; };
+		893B2D482375F759002AA681 /* UDPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B2D472375F759002AA681 /* UDPUtil.swift */; };
+		893B2D4A2375FD3F002AA681 /* JawTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B2D492375FD3F002AA681 /* JawTrackingViewController.swift */; };
 		8949B347232305B20033EF93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B334232305B20033EF93 /* AppDelegate.swift */; };
 		8949B348232305B20033EF93 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B335232305B20033EF93 /* Utilities.swift */; };
 		8949B349232305B20033EF93 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8949B337232305B20033EF93 /* Models.scnassets */; };
@@ -15,26 +24,33 @@
 		8949B34C232305B20033EF93 /* VideoTexturedFace.shader in Resources */ = {isa = PBXBuildFile; fileRef = 8949B33A232305B20033EF93 /* VideoTexturedFace.shader */; };
 		8949B34E232305B20033EF93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8949B33D232305B20033EF93 /* Main.storyboard */; };
 		8949B34F232305B20033EF93 /* TransformVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B340232305B20033EF93 /* TransformVisualization.swift */; };
-		8949B350232305B20033EF93 /* FaceOcclusionOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B341232305B20033EF93 /* FaceOcclusionOverlay.swift */; };
-		8949B351232305B20033EF93 /* VideoTexturedFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B342232305B20033EF93 /* VideoTexturedFace.swift */; };
 		8949B352232305B20033EF93 /* VirtualContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B343232305B20033EF93 /* VirtualContent.swift */; };
-		8949B353232305B20033EF93 /* TexturedFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B344232305B20033EF93 /* TexturedFace.swift */; };
-		8949B354232305B20033EF93 /* BlendShapeCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B345232305B20033EF93 /* BlendShapeCharacter.swift */; };
-		8949B355232305B20033EF93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B346232305B20033EF93 /* ViewController.swift */; };
+		8949B353232305B20033EF93 /* FaceTrackingVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B344232305B20033EF93 /* FaceTrackingVisualization.swift */; };
 		8949B357232306A10033EF93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8949B356232306A00033EF93 /* Assets.xcassets */; };
 		8966F22F2328970200979D16 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966F22E2328970200979D16 /* Network.swift */; };
 		896CC92023661EC30007B3F8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896CC91E23661EB50007B3F8 /* opencv2.framework */; };
 		896CC92123661EC30007B3F8 /* visp3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896CC91F23661EC30007B3F8 /* visp3.framework */; };
 		896CC92623661FD40007B3F8 /* ImageConversion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 896CC92523661FD40007B3F8 /* ImageConversion.mm */; };
 		897A15852366297600F9E932 /* ImageDisplay.mm in Sources */ = {isa = PBXBuildFile; fileRef = 897A15842366297600F9E932 /* ImageDisplay.mm */; };
-		897A158723662D6F00F9E932 /* AprilTag.png in Resources */ = {isa = PBXBuildFile; fileRef = 897A158623662D6F00F9E932 /* AprilTag.png */; };
-		897A158923662E0B00F9E932 /* AprilTagDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897A158823662E0B00F9E932 /* AprilTagDetector.swift */; };
 		897A159323665AF500F9E932 /* AprilTag.mm in Sources */ = {isa = PBXBuildFile; fileRef = 897A159223665AF500F9E932 /* AprilTag.mm */; };
+		89C415AF2369F43A000778C7 /* TransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C415AE2369F43A000778C7 /* TransformViewController.swift */; };
 		89F73A352357D20500A95F60 /* ARFaceGeometry.obj in Resources */ = {isa = PBXBuildFile; fileRef = 89F73A342357D20500A95F60 /* ARFaceGeometry.obj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8911108B2368ED2E003A1429 /* AvCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvCapture.swift; sourceTree = "<group>"; };
+		891110A42369EA2B003A1429 /* FaceTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTrackingViewController.swift; sourceTree = "<group>"; };
 		891BD3DB2331867600ED5CA0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		89261262236CC4AE009990D0 /* Camera Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Camera Functions.swift"; sourceTree = "<group>"; };
+		89370E12236CD8F7001A28D4 /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
+		89370E13236CD8F8001A28D4 /* udp_util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udp_util.c; sourceTree = "<group>"; };
+		89370E14236CD8F8001A28D4 /* udp_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udp_util.h; sourceTree = "<group>"; };
+		89370E15236CD8F8001A28D4 /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
+		89370E18236CD8FF001A28D4 /* GLESProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESProgram.m; sourceTree = "<group>"; };
+		89370E19236CD8FF001A28D4 /* GLESProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESProgram.h; sourceTree = "<group>"; };
+		893B2D452375D778002AA681 /* TCPUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPUtil.swift; sourceTree = "<group>"; };
+		893B2D472375F759002AA681 /* UDPUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPUtil.swift; sourceTree = "<group>"; };
+		893B2D492375FD3F002AA681 /* JawTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JawTrackingViewController.swift; sourceTree = "<group>"; };
 		8949B31D232304DC0033EF93 /* ARFaceTrackingSwift4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARFaceTrackingSwift4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8949B334232305B20033EF93 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8949B335232305B20033EF93 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -43,12 +59,8 @@
 		8949B33A232305B20033EF93 /* VideoTexturedFace.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VideoTexturedFace.shader; sourceTree = "<group>"; };
 		8949B33E232305B20033EF93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		8949B340232305B20033EF93 /* TransformVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformVisualization.swift; sourceTree = "<group>"; };
-		8949B341232305B20033EF93 /* FaceOcclusionOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceOcclusionOverlay.swift; sourceTree = "<group>"; };
-		8949B342232305B20033EF93 /* VideoTexturedFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTexturedFace.swift; sourceTree = "<group>"; };
 		8949B343232305B20033EF93 /* VirtualContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualContent.swift; sourceTree = "<group>"; };
-		8949B344232305B20033EF93 /* TexturedFace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TexturedFace.swift; sourceTree = "<group>"; };
-		8949B345232305B20033EF93 /* BlendShapeCharacter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlendShapeCharacter.swift; sourceTree = "<group>"; };
-		8949B346232305B20033EF93 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8949B344232305B20033EF93 /* FaceTrackingVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceTrackingVisualization.swift; sourceTree = "<group>"; };
 		8949B356232306A00033EF93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8949B35B2323099D0033EF93 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8966F22E2328970200979D16 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -60,10 +72,9 @@
 		896CC92523661FD40007B3F8 /* ImageConversion.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageConversion.mm; sourceTree = "<group>"; };
 		897A15832366297600F9E932 /* ImageDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDisplay.h; sourceTree = "<group>"; };
 		897A15842366297600F9E932 /* ImageDisplay.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageDisplay.mm; sourceTree = "<group>"; };
-		897A158623662D6F00F9E932 /* AprilTag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AprilTag.png; sourceTree = "<group>"; };
-		897A158823662E0B00F9E932 /* AprilTagDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AprilTagDetector.swift; sourceTree = "<group>"; };
 		897A159123665AF500F9E932 /* AprilTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AprilTag.h; sourceTree = "<group>"; };
 		897A159223665AF500F9E932 /* AprilTag.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AprilTag.mm; sourceTree = "<group>"; };
+		89C415AE2369F43A000778C7 /* TransformViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformViewController.swift; sourceTree = "<group>"; };
 		89F73A342357D20500A95F60 /* ARFaceGeometry.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ARFaceGeometry.obj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		891110A32369E9C3003A1429 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				893B2D492375FD3F002AA681 /* JawTrackingViewController.swift */,
+				89C415AE2369F43A000778C7 /* TransformViewController.swift */,
+				891110A42369EA2B003A1429 /* FaceTrackingViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		8949B314232304DC0033EF93 = {
 			isa = PBXGroup;
 			children = (
@@ -101,16 +122,19 @@
 		8949B31F232304DC0033EF93 /* ARFaceTrackingSwift4 */ = {
 			isa = PBXGroup;
 			children = (
-				89F73A342357D20500A95F60 /* ARFaceGeometry.obj */,
+				8949B35B2323099D0033EF93 /* Info.plist */,
 				8949B334232305B20033EF93 /* AppDelegate.swift */,
-				8949B346232305B20033EF93 /* ViewController.swift */,
+				891110A32369E9C3003A1429 /* View Controllers */,
 				8949B33C232305B20033EF93 /* Base.lproj */,
 				8949B33F232305B20033EF93 /* Face Overlay Content */,
 				8949B336232305B20033EF93 /* Resources */,
 				8949B335232305B20033EF93 /* Utilities.swift */,
-				8949B35B2323099D0033EF93 /* Info.plist */,
 				8966F22E2328970200979D16 /* Network.swift */,
 				891BD3DB2331867600ED5CA0 /* Extensions.swift */,
+				8911108B2368ED2E003A1429 /* AvCapture.swift */,
+				89261262236CC4AE009990D0 /* Camera Functions.swift */,
+				893B2D452375D778002AA681 /* TCPUtil.swift */,
+				893B2D472375F759002AA681 /* UDPUtil.swift */,
 			);
 			path = ARFaceTrackingSwift4;
 			sourceTree = "<group>";
@@ -118,7 +142,7 @@
 		8949B336232305B20033EF93 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				897A158623662D6F00F9E932 /* AprilTag.png */,
+				89F73A342357D20500A95F60 /* ARFaceGeometry.obj */,
 				8949B356232306A00033EF93 /* Assets.xcassets */,
 				8949B337232305B20033EF93 /* Models.scnassets */,
 				8949B338232305B20033EF93 /* LaunchScreen.storyboard */,
@@ -140,11 +164,7 @@
 			children = (
 				8949B343232305B20033EF93 /* VirtualContent.swift */,
 				8949B340232305B20033EF93 /* TransformVisualization.swift */,
-				8949B344232305B20033EF93 /* TexturedFace.swift */,
-				897A158823662E0B00F9E932 /* AprilTagDetector.swift */,
-				8949B341232305B20033EF93 /* FaceOcclusionOverlay.swift */,
-				8949B342232305B20033EF93 /* VideoTexturedFace.swift */,
-				8949B345232305B20033EF93 /* BlendShapeCharacter.swift */,
+				8949B344232305B20033EF93 /* FaceTrackingVisualization.swift */,
 			);
 			path = "Face Overlay Content";
 			sourceTree = "<group>";
@@ -161,6 +181,12 @@
 		896CC92223661F4C0007B3F8 /* ObjectiveC Classes */ = {
 			isa = PBXGroup;
 			children = (
+				89370E19236CD8FF001A28D4 /* GLESProgram.h */,
+				89370E18236CD8FF001A28D4 /* GLESProgram.m */,
+				89370E15236CD8F8001A28D4 /* ShaderUtilities.c */,
+				89370E12236CD8F7001A28D4 /* ShaderUtilities.h */,
+				89370E13236CD8F8001A28D4 /* udp_util.c */,
+				89370E14236CD8F8001A28D4 /* udp_util.h */,
 				896CC92423661FD40007B3F8 /* ImageConversion.h */,
 				896CC92523661FD40007B3F8 /* ImageConversion.mm */,
 				896CC92323661FD30007B3F8 /* ARFaceTrackingSwift4-Bridging-Header.h */,
@@ -236,7 +262,6 @@
 				89F73A352357D20500A95F60 /* ARFaceGeometry.obj in Resources */,
 				8949B349232305B20033EF93 /* Models.scnassets in Resources */,
 				8949B34E232305B20033EF93 /* Main.storyboard in Resources */,
-				897A158723662D6F00F9E932 /* AprilTag.png in Resources */,
 				8949B357232306A10033EF93 /* Assets.xcassets in Resources */,
 				8949B34A232305B20033EF93 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -249,21 +274,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8949B351232305B20033EF93 /* VideoTexturedFace.swift in Sources */,
+				89C415AF2369F43A000778C7 /* TransformViewController.swift in Sources */,
 				8966F22F2328970200979D16 /* Network.swift in Sources */,
+				893B2D4A2375FD3F002AA681 /* JawTrackingViewController.swift in Sources */,
 				8949B348232305B20033EF93 /* Utilities.swift in Sources */,
-				897A158923662E0B00F9E932 /* AprilTagDetector.swift in Sources */,
-				8949B350232305B20033EF93 /* FaceOcclusionOverlay.swift in Sources */,
-				8949B355232305B20033EF93 /* ViewController.swift in Sources */,
+				89261263236CC4AE009990D0 /* Camera Functions.swift in Sources */,
+				8911108C2368ED2E003A1429 /* AvCapture.swift in Sources */,
 				8949B34F232305B20033EF93 /* TransformVisualization.swift in Sources */,
+				89370E1A236CD8FF001A28D4 /* GLESProgram.m in Sources */,
 				897A15852366297600F9E932 /* ImageDisplay.mm in Sources */,
+				89370E17236CD8F8001A28D4 /* ShaderUtilities.c in Sources */,
 				8949B347232305B20033EF93 /* AppDelegate.swift in Sources */,
-				8949B353232305B20033EF93 /* TexturedFace.swift in Sources */,
+				893B2D462375D778002AA681 /* TCPUtil.swift in Sources */,
+				891110A52369EA2B003A1429 /* FaceTrackingViewController.swift in Sources */,
+				89370E16236CD8F8001A28D4 /* udp_util.c in Sources */,
+				8949B353232305B20033EF93 /* FaceTrackingVisualization.swift in Sources */,
+				893B2D482375F759002AA681 /* UDPUtil.swift in Sources */,
 				8949B352232305B20033EF93 /* VirtualContent.swift in Sources */,
 				896CC92623661FD40007B3F8 /* ImageConversion.mm in Sources */,
 				897A159323665AF500F9E932 /* AprilTag.mm in Sources */,
 				891BD3DC2331867600ED5CA0 /* Extensions.swift in Sources */,
-				8949B354232305B20033EF93 /* BlendShapeCharacter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99ZF7UC393;
@@ -430,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99ZF7UC393;

@@ -40,7 +40,7 @@
     return color;
   }
   else {
-    NSLog(@"Input UIImage is color");
+//    NSLog(@"Input UIImage is color");
     vpImage<vpRGBa> color(image.size.height, image.size.width); // 8 bits per component, 4 channels
     
     colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -86,7 +86,7 @@
     
     return gray;
   } else {
-    NSLog(@"Input UIImage is color");
+//    NSLog(@"Input UIImage is color");
     vpImage<vpRGBa> color(image.size.height, image.size.width); // 8 bits per component, 4 channels (color channels + alpha)
     
     colorSpace = CGColorSpaceCreateDeviceRGB();
