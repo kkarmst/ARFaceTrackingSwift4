@@ -133,6 +133,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "AVCapture.cameraWithPosition(position:):AvCapture.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "deviceDiscoverySession.devices">
+            </PersistentString>
+            <PersistentString
+               value = "device.position">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "AVCapture.captureOutput(_:didOutput:from:):AvCapture.swift">
          <PersistentStrings>
             <PersistentString

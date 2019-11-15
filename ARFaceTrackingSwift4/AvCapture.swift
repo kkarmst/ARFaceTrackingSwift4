@@ -40,12 +40,15 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     private var permissionGranted = false
     private let quality = AVCaptureSession.Preset.medium
     private var rotate:CGFloat = 90
-    let position = AVCaptureDevice.Position.front
+    private var defaultPosition:AVCaptureDevice.Position = .front
     private var captureSession = AVCaptureSession()
     private let sessionQueue = DispatchQueue(label: "session queue")
+    private var videoInput:AVCaptureDeviceInput!
+    private var videoDataOutput:AVCaptureVideoDataOutput!
+    private var deviceDiscoverySession:AVCaptureDevice.DiscoverySession!
     lazy var previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
     weak var delegate: AVCaptureDelegate?
-    //    lazy var framerate:Float
+
     
     override init(){
         super.init()
@@ -80,18 +83,17 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             changeResolution(quality: lastResolution)
         }
         
-        let videoDevice = cameraWithPosition(position: position)
-        let videoInput: AVCaptureInput!
+        let videoDevice = cameraWithPosition(position:defaultPosition)
         do {
-            videoInput = try AVCaptureDeviceInput.init(device: videoDevice!)
+            self.videoInput = try AVCaptureDeviceInput.init(device: videoDevice!)
         } catch {
             return
         }
         guard captureSession.canAddInput(videoInput) else {return}
-//        configureCameraForHighestFrameRate(device: videoDevice!)
+        configureCameraForHighestFrameRate(device: videoDevice!)
         captureSession.addInput(videoInput)
         
-        let videoDataOutput = AVCaptureVideoDataOutput()
+        self.videoDataOutput = AVCaptureVideoDataOutput()
         videoDataOutput.setSampleBufferDelegate(self, queue: DispatchQueue.main)
         videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable as! String : Int(kCVPixelFormatType_32BGRA)]
         videoDataOutput.alwaysDiscardsLateVideoFrames = true
@@ -120,7 +122,6 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
         
         let image = imageFromSampleBuffer(sampleBuffer: sampleBuffer)
         delegate?.capture(image: image, intrinsic:matrix)
-        
     }
     
     func imageFromSampleBuffer(sampleBuffer :CMSampleBuffer) -> UIImage {
@@ -179,51 +180,73 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     func switchCameraPosition() {
-        // Indicate thta some changes will be made to the session
-        self.captureSession.beginConfiguration()
+        let currentVideoDevice = self.videoInput.device
+        let currentPosition = currentVideoDevice.position
         
-        // Removing existing input
-        let currentCameraInput: AVCaptureInput = self.captureSession.inputs.first!
-        self.captureSession.removeInput(currentCameraInput)
+        let preferredPosition: AVCaptureDevice.Position
+        let preferredDeviceType: AVCaptureDevice.DeviceType
         
-        // Get new input
-        var newCamera: AVCaptureDevice! = nil
-        if let input = currentCameraInput as? AVCaptureDeviceInput {
-            if (input.device.position == .back) {
-                newCamera = cameraWithPosition(position: .front)
-//                configureCameraForHighestFrameRate(device: newCamera!)
-
-            } else {
-                newCamera = cameraWithPosition(position: .back)
-//                configureCameraForHighestFrameRate(device: newCamera!)
-
+        switch currentPosition {
+        case .unspecified, .front:
+            preferredPosition = .back
+            preferredDeviceType = .builtInDualCamera
+            
+        case .back:
+            preferredPosition = .front
+            preferredDeviceType = .builtInTrueDepthCamera
+            
+        @unknown default:
+            print("Unknown capture position. Defaulting to back, dual-camera.")
+            preferredPosition = .back
+            preferredDeviceType = .builtInDualCamera
+        }
+        let devices = self.deviceDiscoverySession.devices
+        var newVideoDevice: AVCaptureDevice? = nil
+        
+        // First, seek a device with both the preferred position and device type. Otherwise, seek a device with only the preferred position.
+        if let device = devices.first(where: { $0.position == preferredPosition && $0.deviceType == preferredDeviceType }) {
+            newVideoDevice = device
+        } else if let device = devices.first(where: { $0.position == preferredPosition }) {
+            newVideoDevice = device
+        }
+        
+        if let videoDevice = newVideoDevice {
+            do {
+                let videoDeviceInput = try AVCaptureDeviceInput(device: videoDevice)
+                
+                self.captureSession.beginConfiguration()
+                
+                // Remove the existing device input first, because AVCaptureSession doesn't support
+                // simultaneous use of the rear and front cameras.
+                self.captureSession.removeInput(self.videoInput)
+                
+                if self.captureSession.canAddInput(videoDeviceInput) {
+                    self.captureSession.addInput(videoDeviceInput)
+                    self.videoInput = videoDeviceInput
+                } else {
+                    self.captureSession.addInput(self.videoInput)
+                }
+                 if let connection = videoDataOutput.connections.first {
+                           if connection.isCameraIntrinsicMatrixDeliverySupported {
+                               print("Camera Intrinsic Matrix Delivery is supported.")
+                               connection.isCameraIntrinsicMatrixDeliveryEnabled = true
+                           } else {
+                               print("Camera Intrinsic Matrix Delivery is NOT supported.")
+                           }
+                       }
+                
+                
+                self.captureSession.commitConfiguration()
+            } catch {
+                print("Error occurred while creating video device input: \(error)")
             }
         }
-        // Add input to session
-        var err: NSError?
-        var newVideoInput: AVCaptureDeviceInput!
-        do {
-            newVideoInput = try AVCaptureDeviceInput(device: newCamera)
-        } catch let err1 as NSError {
-            err = err1
-            newVideoInput = nil
-        }
-        
-        if newVideoInput == nil || err != nil {
-            print("Error creating capture device input: \(String(describing: err?.localizedDescription))")
-        } else {
-            
-            self.captureSession.addInput(newVideoInput)
-        }
-        
-        //Commit all the configuration changes at once
-        self.captureSession.commitConfiguration()
     }
     
     // Find a camera with the specified AVCaptureDevicePosition, returning nil if one is not found
     func cameraWithPosition(position: AVCaptureDevice.Position) -> AVCaptureDevice? {
         
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .unspecified)
+        self.deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .unspecified)
         for device in deviceDiscoverySession.devices {
             if device.position == position {
                 return device

@@ -24,7 +24,7 @@ class JawTrackingViewController: UIViewController, AVCaptureDelegate {
     var targetTagIds = [Int32]()
     var tagFamily = "36h11"
     var captureStatus = "RUN"
-    var modes:DisplayMode = .distance
+    var modes:DisplayMode = .orientation
     var tagSize = 14.25 //mm
     var frontcam = true
     var img: UIImage!
@@ -75,9 +75,6 @@ class JawTrackingViewController: UIViewController, AVCaptureDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         avCapture.delegate = self
-//        avCapture.previewLayer.frame = uiView.bounds
-//        avCapture.previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
-        //        uiView.layer.addSublayer(avCapture.previewLayer)
         tagDataToggleState.isOn = false
         camDataToggleState.isOn = false
         framesToggleState.isOn = false
@@ -119,7 +116,7 @@ class JawTrackingViewController: UIViewController, AVCaptureDelegate {
         } else {
             imageView.image = vispImg
         }
-        
+
         let end = Date()
         let fps = (1/((end.timeIntervalSince(start))))
         frameRateLabel.text = String(format: "%5.2f FPS", fps)
