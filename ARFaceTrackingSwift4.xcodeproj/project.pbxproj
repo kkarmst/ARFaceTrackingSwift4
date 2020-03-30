@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554615F1A1662CBB79739D16 /* Pods_ARFaceTrackingSwift4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7124C4D79D5404763A49F8D /* Pods_ARFaceTrackingSwift4.framework */; };
 		8911108C2368ED2E003A1429 /* AvCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8911108B2368ED2E003A1429 /* AvCapture.swift */; };
 		891110A52369EA2B003A1429 /* FaceTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891110A42369EA2B003A1429 /* FaceTrackingViewController.swift */; };
 		891BD3DC2331867600ED5CA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891BD3DB2331867600ED5CA0 /* Extensions.swift */; };
-		89261263236CC4AE009990D0 /* Camera Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89261262236CC4AE009990D0 /* Camera Functions.swift */; };
-		89370E16236CD8F8001A28D4 /* udp_util.c in Sources */ = {isa = PBXBuildFile; fileRef = 89370E13236CD8F8001A28D4 /* udp_util.c */; };
-		89370E17236CD8F8001A28D4 /* ShaderUtilities.c in Sources */ = {isa = PBXBuildFile; fileRef = 89370E15236CD8F8001A28D4 /* ShaderUtilities.c */; };
-		89370E1A236CD8FF001A28D4 /* GLESProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 89370E18236CD8FF001A28D4 /* GLESProgram.m */; };
 		893B2D462375D778002AA681 /* TCPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B2D452375D778002AA681 /* TCPUtil.swift */; };
 		893B2D482375F759002AA681 /* UDPUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B2D472375F759002AA681 /* UDPUtil.swift */; };
-		893B2D4A2375FD3F002AA681 /* JawTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893B2D492375FD3F002AA681 /* JawTrackingViewController.swift */; };
 		8949B347232305B20033EF93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B334232305B20033EF93 /* AppDelegate.swift */; };
 		8949B348232305B20033EF93 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B335232305B20033EF93 /* Utilities.swift */; };
 		8949B349232305B20033EF93 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8949B337232305B20033EF93 /* Models.scnassets */; };
@@ -27,30 +23,47 @@
 		8949B352232305B20033EF93 /* VirtualContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B343232305B20033EF93 /* VirtualContent.swift */; };
 		8949B353232305B20033EF93 /* FaceTrackingVisualization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8949B344232305B20033EF93 /* FaceTrackingVisualization.swift */; };
 		8949B357232306A10033EF93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8949B356232306A00033EF93 /* Assets.xcassets */; };
+		894A24DE23D26C6D0025555F /* libxml2.2.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 894A24DC23D26C6D0025555F /* libxml2.2.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		8966F22F2328970200979D16 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8966F22E2328970200979D16 /* Network.swift */; };
-		896CC92023661EC30007B3F8 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896CC91E23661EB50007B3F8 /* opencv2.framework */; };
-		896CC92123661EC30007B3F8 /* visp3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896CC91F23661EC30007B3F8 /* visp3.framework */; };
+		89699BAA240EB002008D5FD2 /* AprilNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89699BA9240EB002008D5FD2 /* AprilNode.swift */; };
+		89699BAF240EB701008D5FD2 /* AprilProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89699BAE240EB701008D5FD2 /* AprilProperty.swift */; };
 		896CC92623661FD40007B3F8 /* ImageConversion.mm in Sources */ = {isa = PBXBuildFile; fileRef = 896CC92523661FD40007B3F8 /* ImageConversion.mm */; };
+		8975256B2404956800AFE227 /* JawFaceTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975256A2404956800AFE227 /* JawFaceTrackingViewController.swift */; };
+		8975C97223D7A9E60053575D /* cube_small.cao in Resources */ = {isa = PBXBuildFile; fileRef = 8975C97123D7A9E60053575D /* cube_small.cao */; };
+		897762F6241818C60056DB58 /* april_tags in Resources */ = {isa = PBXBuildFile; fileRef = 897762F5241818C50056DB58 /* april_tags */; };
+		897762FD2418442C0056DB58 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897762FB2418442B0056DB58 /* opencv2.framework */; };
+		897762FF2418442C0056DB58 /* visp3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897762FC2418442C0056DB58 /* visp3.framework */; };
+		89776302241894350056DB58 /* dodeca_centre_to_face_trans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 89776301241894350056DB58 /* dodeca_centre_to_face_trans.txt */; };
 		897A15852366297600F9E932 /* ImageDisplay.mm in Sources */ = {isa = PBXBuildFile; fileRef = 897A15842366297600F9E932 /* ImageDisplay.mm */; };
 		897A159323665AF500F9E932 /* AprilTag.mm in Sources */ = {isa = PBXBuildFile; fileRef = 897A159223665AF500F9E932 /* AprilTag.mm */; };
+		89C0548423C942C100A4C857 /* MBTracker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89C0548323C942C100A4C857 /* MBTracker.mm */; };
 		89C415AF2369F43A000778C7 /* TransformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C415AE2369F43A000778C7 /* TransformViewController.swift */; };
+		89C7172B2421A6900073EA41 /* ImageDisplay+withContext.mm in Sources */ = {isa = PBXBuildFile; fileRef = 89C7172A2421A6900073EA41 /* ImageDisplay+withContext.mm */; };
+		89E7D09A238C76D8000C7C3B /* JawTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E7D099238C76D8000C7C3B /* JawTrackingViewController.swift */; };
 		89F73A352357D20500A95F60 /* ARFaceGeometry.obj in Resources */ = {isa = PBXBuildFile; fileRef = 89F73A342357D20500A95F60 /* ARFaceGeometry.obj */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		894A24DF23D26C6D0025555F /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				894A24DE23D26C6D0025555F /* libxml2.2.dylib in Embed Libraries */,
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		55FF00A6181DF21601D698E2 /* Pods-ARFaceTrackingSwift4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARFaceTrackingSwift4.release.xcconfig"; path = "Target Support Files/Pods-ARFaceTrackingSwift4/Pods-ARFaceTrackingSwift4.release.xcconfig"; sourceTree = "<group>"; };
 		8911108B2368ED2E003A1429 /* AvCapture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvCapture.swift; sourceTree = "<group>"; };
 		891110A42369EA2B003A1429 /* FaceTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTrackingViewController.swift; sourceTree = "<group>"; };
 		891BD3DB2331867600ED5CA0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		89261262236CC4AE009990D0 /* Camera Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Camera Functions.swift"; sourceTree = "<group>"; };
-		89370E12236CD8F7001A28D4 /* ShaderUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShaderUtilities.h; sourceTree = "<group>"; };
-		89370E13236CD8F8001A28D4 /* udp_util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = udp_util.c; sourceTree = "<group>"; };
-		89370E14236CD8F8001A28D4 /* udp_util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udp_util.h; sourceTree = "<group>"; };
-		89370E15236CD8F8001A28D4 /* ShaderUtilities.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ShaderUtilities.c; sourceTree = "<group>"; };
-		89370E18236CD8FF001A28D4 /* GLESProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESProgram.m; sourceTree = "<group>"; };
-		89370E19236CD8FF001A28D4 /* GLESProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESProgram.h; sourceTree = "<group>"; };
 		893B2D452375D778002AA681 /* TCPUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCPUtil.swift; sourceTree = "<group>"; };
 		893B2D472375F759002AA681 /* UDPUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPUtil.swift; sourceTree = "<group>"; };
-		893B2D492375FD3F002AA681 /* JawTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JawTrackingViewController.swift; sourceTree = "<group>"; };
 		8949B31D232304DC0033EF93 /* ARFaceTrackingSwift4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARFaceTrackingSwift4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8949B334232305B20033EF93 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8949B335232305B20033EF93 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -63,19 +76,34 @@
 		8949B344232305B20033EF93 /* FaceTrackingVisualization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceTrackingVisualization.swift; sourceTree = "<group>"; };
 		8949B356232306A00033EF93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8949B35B2323099D0033EF93 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		894A24DC23D26C6D0025555F /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = ../../../../../../usr/lib/libxml2.2.dylib; sourceTree = "<group>"; };
 		8966F22E2328970200979D16 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		8968D61B236621E700642090 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		896CC91E23661EB50007B3F8 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
-		896CC91F23661EC30007B3F8 /* visp3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = visp3.framework; sourceTree = "<group>"; };
+		89699BA9240EB002008D5FD2 /* AprilNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AprilNode.swift; sourceTree = "<group>"; };
+		89699BAE240EB701008D5FD2 /* AprilProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AprilProperty.swift; sourceTree = "<group>"; };
 		896CC92323661FD30007B3F8 /* ARFaceTrackingSwift4-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARFaceTrackingSwift4-Bridging-Header.h"; sourceTree = "<group>"; };
 		896CC92423661FD40007B3F8 /* ImageConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageConversion.h; sourceTree = "<group>"; };
 		896CC92523661FD40007B3F8 /* ImageConversion.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageConversion.mm; sourceTree = "<group>"; };
+		8975256A2404956800AFE227 /* JawFaceTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JawFaceTrackingViewController.swift; sourceTree = "<group>"; };
+		8975C97123D7A9E60053575D /* cube_small.cao */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube_small.cao; sourceTree = "<group>"; };
+		897762F5241818C50056DB58 /* april_tags */ = {isa = PBXFileReference; lastKnownFileType = folder; path = april_tags; sourceTree = "<group>"; };
+		897762FB2418442B0056DB58 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = "visp-3-2/opencv2.framework"; sourceTree = "<group>"; };
+		897762FC2418442C0056DB58 /* visp3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = visp3.framework; path = "visp-3-2/visp3.framework"; sourceTree = "<group>"; };
+		89776301241894350056DB58 /* dodeca_centre_to_face_trans.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dodeca_centre_to_face_trans.txt; sourceTree = "<group>"; };
 		897A15832366297600F9E932 /* ImageDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDisplay.h; sourceTree = "<group>"; };
 		897A15842366297600F9E932 /* ImageDisplay.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageDisplay.mm; sourceTree = "<group>"; };
 		897A159123665AF500F9E932 /* AprilTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AprilTag.h; sourceTree = "<group>"; };
 		897A159223665AF500F9E932 /* AprilTag.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AprilTag.mm; sourceTree = "<group>"; };
+		89C0548323C942C100A4C857 /* MBTracker.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MBTracker.mm; sourceTree = "<group>"; };
+		89C0548523C942E800A4C857 /* MBTracker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBTracker.h; sourceTree = "<group>"; };
 		89C415AE2369F43A000778C7 /* TransformViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformViewController.swift; sourceTree = "<group>"; };
+		89C717292421A6900073EA41 /* ImageDisplay+withContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ImageDisplay+withContext.h"; sourceTree = "<group>"; };
+		89C7172A2421A6900073EA41 /* ImageDisplay+withContext.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "ImageDisplay+withContext.mm"; sourceTree = "<group>"; };
+		89E7D099238C76D8000C7C3B /* JawTrackingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JawTrackingViewController.swift; sourceTree = "<group>"; };
+		89E7D09B238C8888000C7C3B /* ARFaceTrackingSwift4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ARFaceTrackingSwift4.entitlements; sourceTree = "<group>"; };
 		89F73A342357D20500A95F60 /* ARFaceGeometry.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ARFaceGeometry.obj; sourceTree = "<group>"; };
+		D7124C4D79D5404763A49F8D /* Pods_ARFaceTrackingSwift4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARFaceTrackingSwift4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF079E8E427ED86623B0C7A9 /* Pods-ARFaceTrackingSwift4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARFaceTrackingSwift4.debug.xcconfig"; path = "Target Support Files/Pods-ARFaceTrackingSwift4/Pods-ARFaceTrackingSwift4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,20 +111,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				896CC92123661EC30007B3F8 /* visp3.framework in Frameworks */,
-				896CC92023661EC30007B3F8 /* opencv2.framework in Frameworks */,
+				897762FF2418442C0056DB58 /* visp3.framework in Frameworks */,
+				897762FD2418442C0056DB58 /* opencv2.framework in Frameworks */,
+				554615F1A1662CBB79739D16 /* Pods_ARFaceTrackingSwift4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F0A2464B2F79CE614C7AC92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF079E8E427ED86623B0C7A9 /* Pods-ARFaceTrackingSwift4.debug.xcconfig */,
+				55FF00A6181DF21601D698E2 /* Pods-ARFaceTrackingSwift4.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		891110A32369E9C3003A1429 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				893B2D492375FD3F002AA681 /* JawTrackingViewController.swift */,
+				89E7D099238C76D8000C7C3B /* JawTrackingViewController.swift */,
 				89C415AE2369F43A000778C7 /* TransformViewController.swift */,
 				891110A42369EA2B003A1429 /* FaceTrackingViewController.swift */,
+				8975256A2404956800AFE227 /* JawFaceTrackingViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -104,10 +143,11 @@
 		8949B314232304DC0033EF93 = {
 			isa = PBXGroup;
 			children = (
-				896CC92223661F4C0007B3F8 /* ObjectiveC Classes */,
+				896CC92223661F4C0007B3F8 /* Open CV */,
 				8949B31F232304DC0033EF93 /* ARFaceTrackingSwift4 */,
 				8949B31E232304DC0033EF93 /* Products */,
 				896CC91D23661E140007B3F8 /* Frameworks */,
+				5F0A2464B2F79CE614C7AC92 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +162,9 @@
 		8949B31F232304DC0033EF93 /* ARFaceTrackingSwift4 */ = {
 			isa = PBXGroup;
 			children = (
+				89699BAE240EB701008D5FD2 /* AprilProperty.swift */,
+				89699BA9240EB002008D5FD2 /* AprilNode.swift */,
+				89E7D09B238C8888000C7C3B /* ARFaceTrackingSwift4.entitlements */,
 				8949B35B2323099D0033EF93 /* Info.plist */,
 				8949B334232305B20033EF93 /* AppDelegate.swift */,
 				891110A32369E9C3003A1429 /* View Controllers */,
@@ -132,7 +175,6 @@
 				8966F22E2328970200979D16 /* Network.swift */,
 				891BD3DB2331867600ED5CA0 /* Extensions.swift */,
 				8911108B2368ED2E003A1429 /* AvCapture.swift */,
-				89261262236CC4AE009990D0 /* Camera Functions.swift */,
 				893B2D452375D778002AA681 /* TCPUtil.swift */,
 				893B2D472375F759002AA681 /* UDPUtil.swift */,
 			);
@@ -142,6 +184,9 @@
 		8949B336232305B20033EF93 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				89776301241894350056DB58 /* dodeca_centre_to_face_trans.txt */,
+				897762F5241818C50056DB58 /* april_tags */,
+				8975C97123D7A9E60053575D /* cube_small.cao */,
 				89F73A342357D20500A95F60 /* ARFaceGeometry.obj */,
 				8949B356232306A00033EF93 /* Assets.xcassets */,
 				8949B337232305B20033EF93 /* Models.scnassets */,
@@ -172,21 +217,19 @@
 		896CC91D23661E140007B3F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				896CC91E23661EB50007B3F8 /* opencv2.framework */,
-				896CC91F23661EC30007B3F8 /* visp3.framework */,
+				897762FB2418442B0056DB58 /* opencv2.framework */,
+				897762FC2418442C0056DB58 /* visp3.framework */,
+				894A24DC23D26C6D0025555F /* libxml2.2.dylib */,
+				D7124C4D79D5404763A49F8D /* Pods_ARFaceTrackingSwift4.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		896CC92223661F4C0007B3F8 /* ObjectiveC Classes */ = {
+		896CC92223661F4C0007B3F8 /* Open CV */ = {
 			isa = PBXGroup;
 			children = (
-				89370E19236CD8FF001A28D4 /* GLESProgram.h */,
-				89370E18236CD8FF001A28D4 /* GLESProgram.m */,
-				89370E15236CD8F8001A28D4 /* ShaderUtilities.c */,
-				89370E12236CD8F7001A28D4 /* ShaderUtilities.h */,
-				89370E13236CD8F8001A28D4 /* udp_util.c */,
-				89370E14236CD8F8001A28D4 /* udp_util.h */,
+				89C717292421A6900073EA41 /* ImageDisplay+withContext.h */,
+				89C7172A2421A6900073EA41 /* ImageDisplay+withContext.mm */,
 				896CC92423661FD40007B3F8 /* ImageConversion.h */,
 				896CC92523661FD40007B3F8 /* ImageConversion.mm */,
 				896CC92323661FD30007B3F8 /* ARFaceTrackingSwift4-Bridging-Header.h */,
@@ -195,8 +238,10 @@
 				897A15842366297600F9E932 /* ImageDisplay.mm */,
 				897A159123665AF500F9E932 /* AprilTag.h */,
 				897A159223665AF500F9E932 /* AprilTag.mm */,
+				89C0548323C942C100A4C857 /* MBTracker.mm */,
+				89C0548523C942E800A4C857 /* MBTracker.h */,
 			);
-			path = "ObjectiveC Classes";
+			path = "Open CV";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +251,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8949B331232304E10033EF93 /* Build configuration list for PBXNativeTarget "ARFaceTrackingSwift4" */;
 			buildPhases = (
+				4860C0968063A18FCAE4CFF7 /* [CP] Check Pods Manifest.lock */,
 				8949B319232304DC0033EF93 /* Sources */,
 				8949B31A232304DC0033EF93 /* Frameworks */,
 				8949B31B232304DC0033EF93 /* Resources */,
+				E295EBE2D67539B720038545 /* [CP] Embed Pods Frameworks */,
+				894A24DF23D26C6D0025555F /* Embed Libraries */,
 			);
 			buildRules = (
 			);
@@ -263,31 +311,77 @@
 				8949B349232305B20033EF93 /* Models.scnassets in Resources */,
 				8949B34E232305B20033EF93 /* Main.storyboard in Resources */,
 				8949B357232306A10033EF93 /* Assets.xcassets in Resources */,
+				89776302241894350056DB58 /* dodeca_centre_to_face_trans.txt in Resources */,
+				8975C97223D7A9E60053575D /* cube_small.cao in Resources */,
+				897762F6241818C60056DB58 /* april_tags in Resources */,
 				8949B34A232305B20033EF93 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4860C0968063A18FCAE4CFF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARFaceTrackingSwift4-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E295EBE2D67539B720038545 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARFaceTrackingSwift4/Pods-ARFaceTrackingSwift4-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARFaceTrackingSwift4/Pods-ARFaceTrackingSwift4-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ARFaceTrackingSwift4/Pods-ARFaceTrackingSwift4-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8949B319232304DC0033EF93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89C0548423C942C100A4C857 /* MBTracker.mm in Sources */,
 				89C415AF2369F43A000778C7 /* TransformViewController.swift in Sources */,
 				8966F22F2328970200979D16 /* Network.swift in Sources */,
-				893B2D4A2375FD3F002AA681 /* JawTrackingViewController.swift in Sources */,
 				8949B348232305B20033EF93 /* Utilities.swift in Sources */,
-				89261263236CC4AE009990D0 /* Camera Functions.swift in Sources */,
 				8911108C2368ED2E003A1429 /* AvCapture.swift in Sources */,
+				8975256B2404956800AFE227 /* JawFaceTrackingViewController.swift in Sources */,
 				8949B34F232305B20033EF93 /* TransformVisualization.swift in Sources */,
-				89370E1A236CD8FF001A28D4 /* GLESProgram.m in Sources */,
+				89699BAA240EB002008D5FD2 /* AprilNode.swift in Sources */,
+				89C7172B2421A6900073EA41 /* ImageDisplay+withContext.mm in Sources */,
+				89E7D09A238C76D8000C7C3B /* JawTrackingViewController.swift in Sources */,
 				897A15852366297600F9E932 /* ImageDisplay.mm in Sources */,
-				89370E17236CD8F8001A28D4 /* ShaderUtilities.c in Sources */,
+				89699BAF240EB701008D5FD2 /* AprilProperty.swift in Sources */,
 				8949B347232305B20033EF93 /* AppDelegate.swift in Sources */,
 				893B2D462375D778002AA681 /* TCPUtil.swift in Sources */,
 				891110A52369EA2B003A1429 /* FaceTrackingViewController.swift in Sources */,
-				89370E16236CD8F8001A28D4 /* udp_util.c in Sources */,
 				8949B353232305B20033EF93 /* FaceTrackingVisualization.swift in Sources */,
 				893B2D482375F759002AA681 /* UDPUtil.swift in Sources */,
 				8949B352232305B20033EF93 /* VirtualContent.swift in Sources */,
@@ -352,7 +446,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/ObjectiveC Classes/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Open CV/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -363,8 +457,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				HEADER_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/include/libxml2",
+					"$(PROJECT_DIR)/Frameworks/eigen-3.3.7",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LIBRARY_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -413,7 +511,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/ObjectiveC Classes/PrefixHeader.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Open CV/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -432,25 +530,34 @@
 		};
 		8949B332232304E10033EF93 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF079E8E427ED86623B0C7A9 /* Pods-ARFaceTrackingSwift4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ARFaceTrackingSwift4/ARFaceTrackingSwift4.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99ZF7UC393;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(SDKROOT)/usr/include/libxml2",
+					"$(PROJECT_DIR)/Frameworks/visp-3-2",
 				);
 				INFOPLIST_FILE = ARFaceTrackingSwift4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kieranarmstrong.ARFaceTrackingSwift4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ObjectiveC Classes/ARFaceTrackingSwift4-Bridging-Header.h";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Open CV/ARFaceTrackingSwift4-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -459,25 +566,34 @@
 		};
 		8949B333232304E10033EF93 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55FF00A6181DF21601D698E2 /* Pods-ARFaceTrackingSwift4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = ARFaceTrackingSwift4/ARFaceTrackingSwift4.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 99ZF7UC393;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 					"$(SDKROOT)/usr/include/libxml2",
+					"$(PROJECT_DIR)/Frameworks/visp-3-2",
 				);
 				INFOPLIST_FILE = ARFaceTrackingSwift4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kieranarmstrong.ARFaceTrackingSwift4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ObjectiveC Classes/ARFaceTrackingSwift4-Bridging-Header.h";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Open CV/ARFaceTrackingSwift4-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

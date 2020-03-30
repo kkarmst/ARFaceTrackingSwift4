@@ -75,7 +75,7 @@ class FaceTrackingViewController: UIViewController, ARSessionDelegate {
     }
     
     // Streaming mode properties
-    var host = "192.168.0.14" {
+    var host = "192.168.86.24" {
            didSet {
                ini.set(host, forKey: "host")
            }
@@ -110,7 +110,7 @@ class FaceTrackingViewController: UIViewController, ARSessionDelegate {
     
     @IBAction func connectButtonClick(_ sender: Any) {
         if(ipTextField.text != "" && connectButton.title(for: .normal) == "Enable") {
-                  ipTextField.endEditing(true)
+//                  ipTextField.endEditing(true)
                   connect = true
                   startCapture()
 
@@ -148,6 +148,14 @@ class FaceTrackingViewController: UIViewController, ARSessionDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+
+        view.addGestureRecognizer(tap)
 
         if let lastHost = ini.string(forKey: "host") {
                   host = lastHost
@@ -169,7 +177,7 @@ class FaceTrackingViewController: UIViewController, ARSessionDelegate {
         sceneView.delegate = self
         sceneView.session.delegate = self
         sceneView.automaticallyUpdatesLighting = true
-        self.ipTextField.delegate = self
+//        self.ipTextField.delegate = self
         ipTextField.text = host
         UIApplication.shared.isIdleTimerDisabled = true
         
@@ -189,9 +197,9 @@ class FaceTrackingViewController: UIViewController, ARSessionDelegate {
     // MARK: - ARSessionDelegate
     func session(_ session: ARSession, didFailWithError error: Error) {
          stopCapture()
-         DispatchQueue.main.async {
-             self.initARFaceTracking()
-         }
+//         DispatchQueue.main.async {
+//             self.initARFaceTracking()
+//         }
      }
      func sessionWasInterrupted(_ session: ARSession) {
          return
@@ -210,6 +218,13 @@ class FaceTrackingViewController: UIViewController, ARSessionDelegate {
            streamData(connect: true)
         }
      }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        self.host = ipTextField.text!
+        view.endEditing(true)
+    }
     
     func refreshInfo() {
         switch captureMode{
@@ -458,7 +473,7 @@ extension FaceTrackingViewController: ARSCNViewDelegate {
             let contentNode = selectedContentController.contentNode,
             contentNode.parent == node
             else { return }
-        
+
         selectedContentController.session = sceneView.session
         selectedContentController.sceneView = sceneView
         selectedContentController.renderer(renderer, didUpdate: contentNode, for: anchor)
@@ -467,10 +482,10 @@ extension FaceTrackingViewController: ARSCNViewDelegate {
 }
 
 extension FaceTrackingViewController: UITextFieldDelegate {
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
-    
+
 }

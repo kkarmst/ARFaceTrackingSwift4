@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "::-[AprilTag find:targetIds:count:family:intrinsic:tagSize:display:](UIImage *, int *, int, NSString *, float *, int, DisplayMode):AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "_cMo">
+            </PersistentString>
+            <PersistentString
+               value = "tag_corners_px_sp[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[AprilTag estimatePose:targetIds:count:family:withIntrinsics:tagSize:](CVPixelBufferRef, int *, int, NSString *, matrix_float3x3, Float64):AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "intrinsics.columns[1][1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FaceTrackingViewController.transmitFaceData():FaceTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.getFaceData()">
+            </PersistentString>
+            <PersistentString
+               value = "data.count">
+            </PersistentString>
+            <PersistentString
+               value = "UInt8(dataIndex % (Int(UInt8.max) + 1)">
+            </PersistentString>
+            <PersistentString
+               value = "getFrameData()?.str">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[MBTracker init]():MBTracker.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "tracker = new vpMbGenericTracker()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[MBTracker detect:targetIds:count:family:intrinsic:tagSize:display:](UIImage *, int *, int, NSString *, float *, int, TagDisplayMode):MBTracker.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "mat">
+            </PersistentString>
+            <PersistentString
+               value = "cMo.getRotationMatrix().printVector()">
+            </PersistentString>
+            <PersistentString
+               value = "cMo[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CaptureData.str.getter:Extensions.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Int(357.345)">
+            </PersistentString>
+            <PersistentString
+               value = "Int(-0.027765)">
+            </PersistentString>
+            <PersistentString
+               value = "$0">
+            </PersistentString>
+            <PersistentString
+               value = "02776516">
+            </PersistentString>
+            <PersistentString
+               value = "0.02776517">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GLOBAL">
+         <PersistentStrings>
+            <PersistentString
+               value = "sceneView.session.currentFrame?.camera">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[AprilTag find:targetIds:count:family:withIntrinsics:tagSize:display:](UIImage *, int *, int, NSString *, matrix_float3x3, int, DisplayMode):AprilTag.mm">
+      </ContextState>
+      <ContextState
+         contextName = "::-[AprilTag getTagAtIndex:](int):AprilTag.mm">
+      </ContextState>
+      <ContextState
+         contextName = "JawFaceTrackingViewController.getVideoFrames():JawFaceTrackingViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "::-[AprilTag estimatePoseFromUIImage:::::](UIImage *, float, float, float, float):AprilTag.mm">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in JawFaceTrackingViewController.renderer(_:didUpdate:for:):JawFaceTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imageFromCVPixelBuffer(pixelBuffer: self.currentBuffer!)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "findTransformMatAverage(std::__1::vector&lt;vpHomogeneousMatrix, std::__1::allocator&lt;vpHomogeneousMatrix&gt; &gt;):AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "quart2">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[MBTracker trackModel:](UIImage *):MBTracker.mm">
+      </ContextState>
+      <ContextState
+         contextName = "JawFaceTrackingViewController.session(_:didUpdate:):JawFaceTrackingViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "::-[AprilTag init]():AprilTag.mm">
+      </ContextState>
+      <ContextState
+         contextName = "::-[AprilTag estimatePoseFromCVBuffer:::::](CVPixelBufferRef, float, float, float, float):AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "CVPixelBufferGetBaseAddressOfPlane(pixelBuffer, 0)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[AprilTag vispImageToUIImage:](CVPixelBufferRef):AprilTag.mm">
+      </ContextState>
+      <ContextState
+         contextName = "::-[MBTracker getTagAtIndex:](int):MBTracker.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "cMo_vec">
+            </PersistentString>
+            <PersistentString
+               value = "">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[MBTracker initFromPose:](NSMutableArray *):MBTracker.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "printcMo(cMo)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "loadTransformations(NSString*):AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "[allLinedStrings[1] componentsSeparatedByString:@&quot; &quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "allLinedStrings[1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[AprilTag estimatePoseFromUIImage:targetIds:count:family:withIntrinsics:tagSize:](UIImage *, int *, int, NSString *, matrix_float3x3, Float64):AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "detector-&gt;getNbObjects()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "FaceTrackingViewController.getFrameData():FaceTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "anchor.geometry.triangleIndices">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JawTrackingViewController.capture(image:intrinsic:):JawTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSMutableArray(array: pose)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "::-[MBTracker setVpImage:](UIImage *):MBTracker.mm">
+      </ContextState>
+      <ContextState
+         contextName = "::-[MBTracker initFromPose:](int):MBTracker.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "_cMo[index]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JawFaceTrackingViewController.renderer(_:didUpdate:for:):JawFaceTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "apriltagdetector.getNumberOfTags()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "slerp(vpQuaternionVector, vpQuaternionVector, double):AprilTag.mm">
+      </ContextState>
+      <ContextState
+         contextName = "::-[AprilTag transformMatrixFromPixelBuffer:withIntrinsics:](CVPixelBufferRef, matrix_float3x3):AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "intrinsics.columns[2][0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "tagCornersInCamFrame(vpHomogeneousMatrix, double):AprilTag.mm">
+      </ContextState>
+      <ContextState
+         contextName = "JawTrackingViewController.viewWillAppear(_:):JawTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Bundle.main.path(forResource: &quot;marker1_cube&quot;, ofType: &quot;.cao&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AVCapture.configureCameraForHighestFrameRate(device:):AvCapture.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "device.activeFormat">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "lmAPEDodecapen(vpHomogeneousMatrix, std::__1::vector&lt;vpHomogeneousMatrix, std::__1::allocator&lt;vpHomogeneousMatrix&gt; &gt;, std::__1::vector&lt;vpHomogeneousMatrix, std::__1::allocator&lt;vpHomogeneousMatrix&gt; &gt;, vpCameraParameters, std::__1::vector&lt;std::__1::vector&lt;vpImagePoint, std::__1::allocator&lt;vpImagePoint&gt; &gt;, std::__1::allocator&lt;std::__1::vector&lt;vpImagePoint, std::__1::allocator&lt;vpImagePoint&gt; &gt; &gt; &gt;, std::__1::vector&lt;int, std::__1::allocator&lt;int&gt; &gt;, double):AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "row[0][1]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "removeBadAprilTagCentres(std::__1::vector&lt;vpHomogeneousMatrix, std::__1::allocator&lt;vpHomogeneousMatrix&gt; &gt;, vpCameraParameters):AprilTag.mm">
+         <PersistentStrings>
+            <PersistentString
+               value = "*centre_px_space[0]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JawTrackingViewController.TupletoArray.array.getter:JawTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "UnsafeBufferPointer(start: &amp;tmp.0, count: MemoryLayout.size(ofValue: tmp))">
+            </PersistentString>
+            <PersistentString
+               value = "&amp;tmp.0">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JawFaceTrackingViewController.getArTags(rotatedImage:timeStamp:):JawFaceTrackingViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "AVCapture.switchCameraPosition():AvCapture.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "AVCaptureDevice.default(for: .video)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

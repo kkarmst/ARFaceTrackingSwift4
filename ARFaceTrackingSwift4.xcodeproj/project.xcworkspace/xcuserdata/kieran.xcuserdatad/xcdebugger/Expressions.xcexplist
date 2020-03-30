@@ -136,10 +136,10 @@
          contextName = "AVCapture.cameraWithPosition(position:):AvCapture.swift">
          <PersistentStrings>
             <PersistentString
-               value = "deviceDiscoverySession.devices">
+               value = "device.position">
             </PersistentString>
             <PersistentString
-               value = "device.position">
+               value = "deviceDiscoverySession.devices">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -151,6 +151,17 @@
             </PersistentString>
             <PersistentString
                value = " CMGetAttachment(sampleBuffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) as? Data {&#10;            matrix = camData.withUnsafeBytes { $0.pointee }&#10;        }">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JawTrackingViewController.getDocumentsDirectory():JawTrackingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "paths[0]">
+            </PersistentString>
+            <PersistentString
+               value = "FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

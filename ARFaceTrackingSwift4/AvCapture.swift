@@ -1,48 +1,21 @@
-//
-// This file is part of the groma software.
-// Copyright © 2018 Aplix and/or its affiliates.
-//
-// This program is free software; you can redistribute it and/or
-// modify it under the terms of the GNU General Public License
-// version 2 as published by the Free Software Foundation.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program. If not, see http://www.gnu.org/licenses/.
-//
-// See https://groma.jp for more information.
-//
-//
-// This file is copied and modified from original file, which is distributed under
-// MIT License (https://github.com/furuya02/GekigaCamera/blob/master/LICENSE)
-// and is copyrighted as follows.
-//
-// AvCapture.swift
-//
-// Created by hirauchi.shinichi on 2017/02/19.
-// Copyright © 2017年 SAPPOROWORKS. All rights reserved.
-//
 
 import UIKit
 import AVFoundation
 
 protocol AVCaptureDelegate: class {
-    func capture(image: UIImage, intrinsic:matrix_float3x3)
+    func capture(image: UIImage, pixelBuffer: CVPixelBuffer, intrinsic:matrix_float3x3)
 }
 
 class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     let userDefaults = UserDefaults.standard
-    private var permissionGranted = false
-    private let quality = AVCaptureSession.Preset.medium
+    private var permissionGranted = true
+    private let quality = AVCaptureSession.Preset.hd1280x720
     private var rotate:CGFloat = 90
     private var defaultPosition:AVCaptureDevice.Position = .front
     private var captureSession = AVCaptureSession()
     private let sessionQueue = DispatchQueue(label: "session queue")
+    private var isImgProcessing:Bool = false
     private var videoInput:AVCaptureDeviceInput!
     private var videoDataOutput:AVCaptureVideoDataOutput!
     private var deviceDiscoverySession:AVCaptureDevice.DiscoverySession!
@@ -52,10 +25,12 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     override init(){
         super.init()
-        checkPermission()
-        sessionQueue.async { [unowned self] in
-            self.configureSession()
-        }
+        self.checkPermission()
+        self.configureSession()
+        
+//        sessionQueue.async { [unowned self] in
+//            self.configureSession()
+//        }
     }
     
     private func checkPermission() {
@@ -78,30 +53,37 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     
     private func configureSession() {
         guard permissionGranted else { return }
+        
         captureSession.sessionPreset = quality
         if let lastResolution = userDefaults.string(forKey: "Resolution") {
             changeResolution(quality: lastResolution)
         }
         
-        let videoDevice = cameraWithPosition(position:defaultPosition)
+       captureSession.beginConfiguration()
+        
+//        let videoDevice = cameraWithPosition(position:defaultPosition)
+        guard let videoDevice = AVCaptureDevice.default(for: .video) else {
+                   fatalError()
+               }
         do {
-            self.videoInput = try AVCaptureDeviceInput.init(device: videoDevice!)
+            self.videoInput = try AVCaptureDeviceInput.init(device: videoDevice)
         } catch {
             return
         }
         guard captureSession.canAddInput(videoInput) else {return}
-        configureCameraForHighestFrameRate(device: videoDevice!)
         captureSession.addInput(videoInput)
         
         self.videoDataOutput = AVCaptureVideoDataOutput()
         videoDataOutput.setSampleBufferDelegate(self, queue: DispatchQueue.main)
-        videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as AnyHashable as! String : Int(kCVPixelFormatType_32BGRA)]
+        videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_420YpCbCr8BiPlanarFullRange)]
         videoDataOutput.alwaysDiscardsLateVideoFrames = true
+        videoDataOutput.setSampleBufferDelegate(self, queue: sessionQueue)
  
         
         // Check we can add capture output
         guard captureSession.canAddOutput(videoDataOutput) else { return }
         captureSession.addOutput(videoDataOutput)
+
         if let connection = videoDataOutput.connections.first {
             if connection.isCameraIntrinsicMatrixDeliverySupported {
                 print("Camera Intrinsic Matrix Delivery is supported.")
@@ -110,46 +92,57 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
                 print("Camera Intrinsic Matrix Delivery is NOT supported.")
             }
         }
+//        configureCameraForHighestFrameRate(device: videoDevice!)
+        captureSession.commitConfiguration()
     }
     
     // 新しいキャプチャの追加で呼ばれる(1/30秒に１回)
     func captureOutput(_ captureOutput: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         
+        // check image processing flag.
+        if self.isImgProcessing { return }
+        
+        // creat a pixel buffer
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { fatalError() }
+
+        CVPixelBufferLockBaseAddress(pixelBuffer, [])
+
+        // get intrinsic matrix
         var matrix = matrix_float3x3.init()
         if let camData = CMGetAttachment(sampleBuffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) as? Data {
             matrix = camData.withUnsafeBytes { $0.pointee }
         }
         
-        let image = imageFromSampleBuffer(sampleBuffer: sampleBuffer)
-        delegate?.capture(image: image, intrinsic:matrix)
+        // Get UI Image
+        guard let image = imageFromPixelBuffer(pixelBuffer: pixelBuffer) else { fatalError() }
+        
+        CVPixelBufferUnlockBaseAddress(pixelBuffer,[])
+        
+        // process image in main threads
+        self.isImgProcessing = true
+        DispatchQueue.main.async {
+            
+            let rotimage = self.imageRotatedByDegrees(oldImage: image, deg: 90)
+            self.delegate?.capture(image: rotimage, pixelBuffer: pixelBuffer, intrinsic:matrix)
+            
+            // clear processing flag
+            self.sessionQueue.async {
+                self.isImgProcessing = false
+            }
+        }
     }
     
-    func imageFromSampleBuffer(sampleBuffer :CMSampleBuffer) -> UIImage {
-        let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)!
-        
-        // イメージバッファのロック
-        CVPixelBufferLockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
-        
-        // 画像情報を取得
-        let base = CVPixelBufferGetBaseAddressOfPlane(imageBuffer, 0)!
-        let bytesPerRow = UInt(CVPixelBufferGetBytesPerRow(imageBuffer))
-        let width = UInt(CVPixelBufferGetWidth(imageBuffer))
-        let height = UInt(CVPixelBufferGetHeight(imageBuffer))
-        
-        // ビットマップコンテキスト作成
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bitsPerCompornent = 8
-        let bitmapInfo = CGBitmapInfo(rawValue: (CGBitmapInfo.byteOrder32Little.rawValue | CGImageAlphaInfo.premultipliedFirst.rawValue) as UInt32)
-        let newContext = CGContext(data: base, width: Int(width), height: Int(height), bitsPerComponent: Int(bitsPerCompornent), bytesPerRow: Int(bytesPerRow), space: colorSpace, bitmapInfo: bitmapInfo.rawValue)! as CGContext
-        
-        // イメージバッファのアンロック
-        CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags(rawValue: 0))
-        
-        let imageRef = newContext.makeImage()!
-        let oldImage = UIImage(cgImage: imageRef)
-        let rotatedImage = imageRotatedByDegrees(oldImage: oldImage , deg: rotate)
-        
-        return rotatedImage
+    func imageFromPixelBuffer(pixelBuffer :CVPixelBuffer) -> UIImage? {
+
+        let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
+        let pixelBufferWidth = CGFloat(CVPixelBufferGetWidth(pixelBuffer))
+        let pixelBufferHeight = CGFloat(CVPixelBufferGetHeight(pixelBuffer))
+        let imageRect:CGRect = CGRect(x: 0, y: 0, width: pixelBufferWidth, height: pixelBufferHeight)
+        let ciContext = CIContext.init()
+        guard let cgImage = ciContext.createCGImage(ciImage, from: imageRect) else {
+            return nil
+        }
+        return UIImage(cgImage: cgImage, scale: 1.0, orientation:.up)
     }
     
     func changeResolution (quality: String) {
@@ -170,13 +163,16 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     }
     
     func startCaptureSession() {
-        self.captureSession.startRunning()
-    }
+        if(!self.captureSession.isRunning){
+            self.captureSession.startRunning()
+            print("Capture session started")
+        }    }
     
     func stopCaptureSession() {
-        self.captureSession.stopRunning()
-        print("Session Stopped")
-        
+        if(self.captureSession.isRunning){
+            self.captureSession.stopRunning()
+            print("Capture session stopped")
+        }
     }
     
     func switchCameraPosition() {
@@ -200,14 +196,27 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
             preferredPosition = .back
             preferredDeviceType = .builtInDualCamera
         }
-        let devices = self.deviceDiscoverySession.devices
+//        let devices = self.deviceDiscoverySession.devices
         var newVideoDevice: AVCaptureDevice? = nil
         
         // First, seek a device with both the preferred position and device type. Otherwise, seek a device with only the preferred position.
-        if let device = devices.first(where: { $0.position == preferredPosition && $0.deviceType == preferredDeviceType }) {
-            newVideoDevice = device
-        } else if let device = devices.first(where: { $0.position == preferredPosition }) {
-            newVideoDevice = device
+//        if let device = devices.first(where: { $0.position == preferredPosition && $0.deviceType == preferredDeviceType }) {
+//            newVideoDevice = device
+//        } else if let device = devices.first(where: { $0.position == preferredPosition }) {
+//            newVideoDevice = device
+//        }
+        
+        if (currentVideoDevice.position == .back) {
+            newVideoDevice = AVCaptureDevice.default(.builtInTrueDepthCamera, for: .video, position: .front)
+            try! newVideoDevice?.lockForConfiguration()
+            newVideoDevice?.focusMode = .continuousAutoFocus
+            newVideoDevice?.unlockForConfiguration()
+        } else if (currentVideoDevice.position == .front) {
+            newVideoDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .back)
+            try! newVideoDevice?.lockForConfiguration()
+            newVideoDevice?.focusMode = .continuousAutoFocus
+            newVideoDevice?.unlockForConfiguration()
+
         }
         
         if let videoDevice = newVideoDevice {
@@ -235,7 +244,8 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
                            }
                        }
                 
-                
+//                configureCameraForHighestFrameRate(device: newVideoDevice!)
+
                 self.captureSession.commitConfiguration()
             } catch {
                 print("Error occurred while creating video device input: \(error)")
@@ -246,7 +256,7 @@ class AVCapture:NSObject, AVCaptureVideoDataOutputSampleBufferDelegate {
     // Find a camera with the specified AVCaptureDevicePosition, returning nil if one is not found
     func cameraWithPosition(position: AVCaptureDevice.Position) -> AVCaptureDevice? {
         
-        self.deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .unspecified)
+        self.deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInTrueDepthCamera], mediaType: .video, position: .unspecified)
         for device in deviceDiscoverySession.devices {
             if device.position == position {
                 return device

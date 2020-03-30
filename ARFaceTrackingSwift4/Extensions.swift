@@ -21,7 +21,8 @@ struct CaptureData {
     var vertices: [SIMD3<Float>]
     
     var str : String {
-        let v = "<" + vertices.map{ "\($0.x):\($0.y):\($0.z)" }.joined(separator: "~") + ">"
+        let v = "<" + vertices.map{ "\($0.x):\($0.y):\($0.z)" }.joined(separator: "~") + "~t:\(String(Double(Date().timeIntervalSince1970)))>"
+//        let datastr = "START,\(v),\(String(Double(Date().timeIntervalSince1970))),"
         return "\(v)"
     }
 }

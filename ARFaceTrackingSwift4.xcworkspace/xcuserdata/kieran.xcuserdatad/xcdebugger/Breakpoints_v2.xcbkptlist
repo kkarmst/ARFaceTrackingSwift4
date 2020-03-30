@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "CB2CD67A-8BC8-4DBA-BFBE-B0AB177C5C4B"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7C60D4F0-6152-4184-8B28-0152A06972BC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARFaceTrackingSwift4/AvCapture.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "configureCameraForHighestFrameRate(device:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E07B6550-BB54-4C70-937A-E885C71F3C8E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARFaceTrackingSwift4/AvCapture.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "captureOutput(_:didOutput:from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A4950B6-AAD6-4F76-8FA3-FE74EA2310C1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARFaceTrackingSwift4/View Controllers/JawFaceTrackingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
+            landmarkName = "getArTags(rotatedImage:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8A4950B6-AAD6-4F76-8FA3-FE74EA2310C1 - 2ffcf4e75be97116"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ARFaceTrackingSwift4.JawFaceTrackingViewController.getArTags(rotatedImage: __C.UIImage, timeStamp: Swift.Double) -&gt; Swift.Array&lt;ARFaceTrackingSwift4.JawFaceTrackingViewController.AprilTagDataSwift&gt;"
+                  moduleName = "ARFaceTrackingSwift4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kieran/develop/xcode/ARFaceTrackingSwift4/ARFaceTrackingSwift4/View%20Controllers/JawFaceTrackingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "246"
+                  endingLineNumber = "246"
+                  offsetFromSymbolStart = "1988">
+               </Location>
+               <Location
+                  uuid = "8A4950B6-AAD6-4F76-8FA3-FE74EA2310C1 - ff1dad7e48d5f851"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ARFaceTrackingSwift4.JawFaceTrackingViewController.getArTags(rotatedImage: __C.UIImage, timeStamp: Swift.Double) -&gt; Swift.Array&lt;ARFaceTrackingSwift4.JawFaceTrackingViewController.AprilTagDataSwift&gt;"
+                  moduleName = "ARFaceTrackingSwift4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kieran/develop/xcode/ARFaceTrackingSwift4/ARFaceTrackingSwift4/View%20Controllers/JawFaceTrackingViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C90FF2B1-AB2E-44E0-A29B-D7937761E78A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARFaceTrackingSwift4/View Controllers/JawFaceTrackingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "getArTags(rotatedImage:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D4EA63F-7D70-4BA5-9FA9-D9747C12E048"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARFaceTrackingSwift4/View Controllers/JawFaceTrackingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "transmitTags()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "785CA609-2752-491E-BD58-0EFF499C251E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ARFaceTrackingSwift4/AvCapture.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "AVCapture"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ABACFCA3-1761-4EF6-B0A9-C95BF4AE4F28"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Open CV/AprilTag.mm"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "632"
+            endingLineNumber = "632"
+            landmarkName = "removeBadAprilTagCentres(T_cam_cent_estimates, cam, img, tag_ids)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B85C1ABB-B9A0-4D01-853F-234B551FA16D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Open CV/AprilTag.mm"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "-find:targetIds:count:family:intrinsic:tagSize:display:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

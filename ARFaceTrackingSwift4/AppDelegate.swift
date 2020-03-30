@@ -8,6 +8,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if self.window!.rootViewController as? UITabBarController != nil {
+            let tabbarController = self.window!.rootViewController as! UITabBarController
+                  tabbarController.selectedIndex = 2
+              }
+              else{
+                  print("Couldn't reach rootViewController named UITabBarController")
+              }
         return true
     }
 
