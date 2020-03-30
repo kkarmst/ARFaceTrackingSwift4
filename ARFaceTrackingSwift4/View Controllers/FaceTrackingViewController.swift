@@ -9,9 +9,12 @@
 import UIKit
 import ARKit
 import SceneKit
+import ReplayKit
 import Foundation
 
-class FaceTrackingViewController: UIViewController, ARSessionDelegate {
+class FaceTrackingViewController: UIViewController, ARSessionDelegate, AVAudioRecorderDelegate {
+    
+     let recorder = RPScreenRecorder.shared()
     
     // MARK: Outlets
 
@@ -133,14 +136,35 @@ class FaceTrackingViewController: UIViewController, ARSessionDelegate {
 
     @IBAction func sessionRecordToggle(_ sender: Any) {
         if (connect == true) {
-                connect = false
-                sessionToggle.isOn = true
-
+            connect = false
+            sessionToggle.isOn = true
+            
         } else if (connect == false) {
             connect = true
             sessionToggle.isOn = false
         }
+        
+        if (sessionToggle.isOn == true) {
+            recorder.startRecording(withMicrophoneEnabled: true) { (error) in
+                if let error = error{
+                    print(error)
+                }
+            }
+        }
+        if (sessionToggle.isOn == false) {
+            recorder.stopRecording { (previewVC, error) in
+                if let previewVC = previewVC {
+                    previewVC.previewControllerDelegate = self
+                    self.present(previewVC, animated: true, completion: nil)
+                }
+                if let error = error{
+                    print(error)
+                }
+            }
+        }
     }
+    
+    
     
     var currentFaceAnchor: ARFaceAnchor?
     
@@ -488,4 +512,11 @@ extension FaceTrackingViewController: UITextFieldDelegate {
         return false
     }
 
+}
+
+//added by andrew
+extension FaceTrackingViewController:RPPreviewViewControllerDelegate{
+    func previewControllerDidFinish(_ previewController:RPPreviewViewController) {
+        dismiss(animated: true, completion: nil)
+    }
 }
